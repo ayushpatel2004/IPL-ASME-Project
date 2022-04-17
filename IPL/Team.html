@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Statistics</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js">
+    </script>
+    <style>
+        body{
+            background-image: url("wp2686809.webp");
+            background-repeat: no-repeat;
+            background-size: cover;            
+        }
+        table{
+            margin: 0 auto;
+            font-size: large;
+            border-collapse: collapse;
+        }
+        th:nth-child(even),td:nth-child(even){
+            background-color: orange;
+        }
+        td{
+            background-color: yellow;
+        }  
+        th,td{
+            font-weight: bold;
+            padding: 10px;
+            text-align: center;
+        }
+        tr.head{
+            background-color: yellow;
+        }  
+        td{
+            font-weight: lighter;
+        }
+        img{
+            position: top left;
+            padding: 21px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <table id='table'>
+        <tr class="head">
+            <th>Sr. No.</th>
+            <th>Team</th>
+            <th>Played</th>
+            <th>Won</th>
+            <th>Loss</th>
+            <th>Tied</th>
+            <th>NR</th>
+            <th>Net RR</th>
+            <th>Form</th>
+            <th>Against</th>
+            <th>Points</th>
+            <th>Form</th>
+        </tr>
+    
+    <script>
+        $(document).ready(function () {
+        $.getJSON("teamData.json", function (data) {
+            var IPL = '';
+            $.each(data, function (key, value){
+                IPL += '<tr>';
+                IPL += '<td>' + value.Sno + '</td>';
+                IPL += '<td>' + value.Team + '</td>';
+                IPL += '<td>' + value.Pld + '</td>';
+                IPL += '<td>' + value.Won + '</td>';
+                IPL += '<td>' + value.Lost + '</td>';
+                IPL += '<td>' + value.Tied + '</td>';
+                IPL += '<td>' + value.NR + '</td>';
+                IPL += '<td>' + value.NetRR + '</td>';
+                IPL += '<td>' + value.For + '</td>';
+                IPL += '<td>' + value.Against + '</td>';
+                IPL += '<td>' + value.Pts + '</td>';
+                IPL += '<td>' + value.Form + '</td>';
+                IPL += '</tr>'                    
+            }); 
+            $('#table').append(IPL);    
+         });
+        });
+        </script>
+        <img src="CSK.png" alt="CSK Image">
+        <img src="DC.png" alt="CSK Image">
+        <img src="GT.png" alt="CSK Image">
+        <img src="KKR.png" alt="CSK Image">
+        <img src="LSG.png" alt="CSK Image">
+        <img src="MI.png" alt="CSK Image">
+        <img src="PBKS.png" alt="CSK Image">
+        <img src="RCB.png" alt="CSK Image">
+        <img src="RR.png" alt="CSK Image">
+        <img src="SRH.png" alt="CSK Image">
+</body>
+</html>

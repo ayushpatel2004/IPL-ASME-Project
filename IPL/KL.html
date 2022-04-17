@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KL Rahul</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js">
+    </script>
+    <style>
+        table{
+            margin: 0 auto;
+            font-size: large;
+            border-collapse: collapse;
+        }
+        th,td{
+            font-weight: bold;
+            padding: 10px;
+            text-align: center;
+        }
+        tr{    
+            background-color: rgb(55, 203, 236);
+        }  
+        td{
+            font-weight: lighter;
+            background-color: aqua;
+        }
+        img{
+            width: 200px;
+        }
+        </style>
+</head>
+<body>
+    <img src="https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2022/1125.png" alt="KL Rahul's Image">
+    <table id='table'>
+        <tr class="head">
+            <th>Name</th>
+            <th>Team</th>
+            <th>Type</th>
+            <th>Born</th>
+            <th>Age</th>
+            <th>National_Side</th>
+            <th>Batting_Style</th>
+            <th>Bowling</th>
+            <th>MatchPlayed</th>
+            <th>InningsBatted</th>
+            <th>NotOuts</th>
+            <th>RunsScored</th>
+            <th>HighestInnScore</th>
+            <th>Hundreds</th>
+            <th>Fifties</th>
+            <th>Fours</th>
+            <th>Sixes</th>
+            <th>BattingAVG</th>
+            <th>BattingSR</th>
+            <th>CatchesTaken</th>
+            <th>StumpingsMade</th>
+            <th>Ducks</th>
+            <th>InningsBowled</th>
+            <th>Overs</th>
+            <th>Maidens</th>
+            <th>RunsConceded</th>
+            <th>Wickets</th>
+            <th>Best</th>
+            <th>Three_Wicket_haul</th>
+            <th>Five_Wicket_haul</th>
+            <th>BowlingAVG</th>
+            <th>EconomyRate</th>
+            <th>BowlingSR</th>
+            <th>MatchedPlayed</th>
+        </tr>
+    <script>
+        $(document).ready(function () {
+        $.getJSON("KL.json", function (data) {
+            var IPL = '';
+            $.each(data, function (key, value){
+                IPL += '<tr>';
+                IPL += '<td>' + value.Name + '</td>';
+                IPL += '<td>' + value.Team + '</td>';
+                IPL += '<td>' + value.Type + '</td>';
+                IPL += '<td>' + value.Born + '</td>';
+                IPL += '<td>' + value.Age + '</td>';
+                IPL += '<td>' + value.National_Side + '</td>';
+                IPL += '<td>' + value.Batting_Style + '</td>';
+                IPL += '<td>' + value.Bowling + '</td>';
+                IPL += '<td>' + value.MatchPlayed + '</td>';
+                IPL += '<td>' + value.InningsBatted + '</td>';
+                IPL += '<td>' + value.NotOuts + '</td>';
+                IPL += '<td>' + value.RunsScored + '</td>';
+                IPL += '<td>' + value.HighestInnScore + '</td>';
+                IPL += '<td>' + value.Hundreds + '</td>';
+                IPL += '<td>' + value.Fifties + '</td>';
+                IPL += '<td>' + value.Fours + '</td>';
+                IPL += '<td>' + value.Sixes + '</td>';
+                IPL += '<td>' + value.BattingAVG + '</td>';
+                IPL += '<td>' + value.BattingSR + '</td>';
+                IPL += '<td>' + value.CatchesTaken + '</td>';
+                IPL += '<td>' + value.StumpingsMade + '</td>';
+                IPL += '<td>' + value.Ducks + '</td>';
+                IPL += '<td>' + value.InningsBowled + '</td>';
+                IPL += '<td>' + value.Overs + '</td>';
+                IPL += '<td>' + value.Maidens + '</td>';
+                IPL += '<td>' + value.RunsConceded + '</td>';
+                IPL += '<td>' + value.Wickets + '</td>';
+                IPL += '<td>' + value.Best + '</td>';
+                IPL += '<td>' + value.Three_Wicket_haul + '</td>';
+                IPL += '<td>' + value.Five_Wicket_haul + '</td>';
+                IPL += '<td>' + value.BowlingAVG + '</td>';
+                IPL += '<td>' + value.EconomyRate + '</td>';
+                IPL += '<td>' + value.BowlingSR + '</td>';
+                IPL += '<td>' + value.MatchedPlayed + '</td>';
+                IPL += '</tr>'                    
+            }); 
+            $('#table').append(IPL);    
+         });
+        });
+        </script>
+        
+</body>
+</html>
