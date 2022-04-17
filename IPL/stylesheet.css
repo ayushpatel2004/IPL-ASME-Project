@@ -1,0 +1,34 @@
+html{
+    display: inline;
+}
+body{
+    background-image: url(pb.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+table{
+    margin-top: 300px;
+    font-size: large;
+    border-collapse: collapse;
+}
+th,td{
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+}
+tr{    
+    background-color: blue;
+    color: white;
+}  
+td{
+    font-weight: lighter;
+    background-color: white;
+    color: black;
+}
+img{
+    top: 51px;
+    left: 0;
+    width: 200px;
+    position: fixed;
+}
