@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&display=swap" rel="stylesheet">
     <title>Team Statistics</title>
     <script src="https://code.jquery.com/jquery-3.5.1.js">
     </script>
@@ -17,21 +20,23 @@
             margin: 0 auto;
             font-size: large;
             border-collapse: collapse;
+            font-family: 'Baloo Bhai 2', cursive;
         }
-        th:nth-child(even),td:nth-child(even){
-            background-color: orange;
-        }
-        td{
-            background-color: yellow;
-        }  
         th,td{
             font-weight: bold;
             padding: 10px;
             text-align: center;
         }
+        tr:nth-child(even){
+            background-color: lightgray;
+        } 
+        tr:nth-child(odd){
+            background-color: white;
+        } 
         tr.head{
-            background-color: yellow;
-        }  
+            background-color: blue;
+            color: white;
+        } 
         td{
             font-weight: lighter;
         }
